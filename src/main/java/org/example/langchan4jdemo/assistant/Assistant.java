@@ -1,4 +1,4 @@
-package org.example.langchan4jdemo;
+package org.example.langchan4jdemo.assistant;
 
 import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 

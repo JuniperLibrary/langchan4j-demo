@@ -7,16 +7,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SeparateChatAssistantConfig {
+public class XiaozhiAgentConfig {
 
   @Autowired
   private PersistentChatMemoryStore persistentChatMemoryStore;
 
   @Bean
-  ChatMemoryProvider chatMemoryProvider() {
+  ChatMemoryProvider chatMemoryProviderXiaozhi() {
     return memoryId -> MessageWindowChatMemory.builder()
         .id(memoryId)
-        .maxMessages(10)
+        .maxMessages(20)
         .chatMemoryStore(persistentChatMemoryStore)
         .build();
   }

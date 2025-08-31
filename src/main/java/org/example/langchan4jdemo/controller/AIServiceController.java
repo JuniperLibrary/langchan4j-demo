@@ -1,8 +1,6 @@
 package org.example.langchan4jdemo.controller;
 
-import dev.langchain4j.community.model.dashscope.QwenChatModel;
-import dev.langchain4j.service.AiServices;
-import org.example.langchan4jdemo.Assistant;
+import org.example.langchan4jdemo.assistant.Assistant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
