@@ -1,11 +1,13 @@
-//package org.example.langchan4jdemo;
-//
-//import dev.langchain4j.service.SystemMessage;
-//import dev.langchain4j.service.spring.AiService;
-//
-//@AiService
-//public interface Assistant {
-//
-//  @SystemMessage("You are a polite assistant")
-//  String chat(String userMessage);
-//}
+package org.example.langchan4jdemo;
+
+import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
+
+import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.spring.AiService;
+
+@AiService(wiringMode = EXPLICIT,chatModel = "qwenChatModel")
+public interface Assistant {
+
+  @SystemMessage("You are a polite assistant")
+  String chat(String userMessage);
+}

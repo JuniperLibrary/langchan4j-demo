@@ -80,6 +80,12 @@
       <artifactId>langchain4j-community-dashscope-spring-boot-starter</artifactId>
     </dependency>
 
+    <!--langchain4j 高级功能-->
+    <dependency>
+      <groupId>dev.langchain4j</groupId>
+      <artifactId>langchain4j-spring-boot-starter</artifactId>
+    </dependency>
+
   </dependencies>
 
 
