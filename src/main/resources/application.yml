@@ -1,6 +1,20 @@
 spring:
   application:
     name: langchan4j
+  data:
+    mongodb:
+      uri: mongodb://192.168.0.160:27017/chat_memory_db
+      username: root
+      password: 123456
+  datasource:
+    url: jdbc:mysql://192.168.0.160:3306/guiguxiaozhi?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 server:
   port: 8080

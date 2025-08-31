@@ -8,7 +8,8 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 @AiService(
     wiringMode = EXPLICIT,
     chatModel = "qwenChatModel",
-    chatMemoryProvider = "chatMemoryProviderXiaozhi")
+    chatMemoryProvider = "chatMemoryProviderXiaozhi",
+    tools = "appointmentTools")
 public interface XiaozhiAgent {
 
   @SystemMessage(fromResource = "zhaozhi-prompt-template.txt")
