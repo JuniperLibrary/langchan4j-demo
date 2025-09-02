@@ -25,7 +25,7 @@ public class EmbeddingStoreConfig {
     //指定索引的向量维度，该维度与 embeddedModel 生成的向量维度相同。
 
     return PineconeEmbeddingStore.builder()
-        .apiKey("pcsk_2HbqUX_7nDuEivbhFWWSiW6Gex2E17Kynigg6cHEd1wLfjYtZUDYqRZrkMQnEvJbiNg8xA")
+        .apiKey("")
         .index("xiaozhi-index")//如果指定的索引不存在，将创建一个新的索引
         .nameSpace("xiaozhi-namespace") //如果指定的名称空间不存在，将创建一个新的名称空间
         .createIndex(PineconeServerlessIndexConfig.builder()
