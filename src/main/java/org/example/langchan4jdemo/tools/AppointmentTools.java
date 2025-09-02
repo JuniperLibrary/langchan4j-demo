@@ -25,7 +25,8 @@ public class AppointmentTools {
   private DoctorScheduleMapper doctorScheduleMapper;
 
 
-  @Tool(name = "预约挂号", value = "先检查医生排班是否有剩余号源，再判断用户是否重复预约，成功则保存预约并扣减号源")
+  //@Tool(name = "预约挂号", value = "先检查医生排班是否有剩余号源，再判断用户是否重复预约，成功则保存预约并扣减号源")
+  @Tool(name="预约挂号", value = "根据参数，先执行工具方法queryDepartment查询是否可预约，并直接给用户回答是否可预约，并让用户确认所有预约信息，用户确认后再进行预约。如果用户没有提供具体的医生姓名，请从向量存储中找到一位医生。")
   public String bookAppointment(Appointment appointment) {
     // 1. 校验排班
     LambdaQueryWrapper<DoctorSchedule> scheduleWrapper = new LambdaQueryWrapper<>();
@@ -86,7 +87,7 @@ public class AppointmentTools {
 //    return "您没有预约记录，请核对预约科室和时间";
 //  }
 
-  @Tool(name = "取消预约挂号", value = "查询预约是否存在，如果存在则更新状态为已取消，并恢复医生号源")
+  @Tool(name = "取消预约挂号", value = "查询预约是否存在，如果存在则更新状态为已取消，并恢复医生号源。如果用户没有提供具体的科室、医生姓名，请从向量存储中找到一位医生或者科室。")
   public String cancelAppointment(Appointment appointment) {
     LambdaQueryWrapper<Appointment> queryWrapper = new LambdaQueryWrapper<>();
     queryWrapper.eq(Appointment::getIdCard, appointment.getIdCard())
